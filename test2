@@ -1,0 +1,27 @@
+26
+CREATE TABLE Students ( Id LONG, First_name TEXT (10), Surname TEXT (15), Age LONG, Phone TEXT (9) );
+INSERT INTO Students ( 1, 'Sergey', 'Ivanov', 18, '145-45-45' );
+INSERT INTO Students ( 2, 'Alexey', 'Petrov', 20, '343-65-45' );
+INSERT INTO Students ( 3, 'Andrey', 'Fedorov', 23, '123-45-18' );
+INSERT INTO Students ( 4, 'Alexandre', 'Zaharov', 22, '345-33-33' );
+INSERT INTO Students ( 5, 'Oleg', 'Podyomny', 19, '754-54-44' );
+INSERT INTO Students ( 6, 'Maksim', 'Kuznetsov', 20, '75-64-52' );
+INSERT INTO Students ( 7, 'Andrey', 'Fedorov', 21, '136-65-52' );
+INSERT INTO Students ( 8, 'Leonid', 'Zaharov', 22, '356-76-96' );
+INSERT INTO Students ( 9, 'Sergey', 'Semenov', 18, '243-21-15' );
+INSERT INTO Students ( 10, 'Ilya', 'Chekhov', 20, '764-53-76' );
+INSERT INTO Students ( 11, 'Egor', 'Kuznetsov', 23, '252-63-66' );
+INSERT INTO Students ( 12, 'Ivan', 'Zaharov', 19, '964-58-36' );
+INSERT INTO Students ( 13, 'Georgiy', 'Ivanov', 18, '580-53-47' );
+INSERT INTO Students ( 14, 'Gennadiy', 'Petrov', 21, '769-65-23' );
+INSERT INTO Students ( 15, 'Viktor', 'Chekhov', 22, '746-73-58' );
+SELECT * FROM Students WHERE ALL;
+UPDATE Students SET Age = Age + 1 WHERE Age IN (18, 19, 20);
+SELECT * FROM Students WHERE ALL;
+UPDATE Students SET First_name = 'Ivan' WHERE (First_name = 'Oleg');
+SELECT * FROM Students WHERE ALL;
+UPDATE Students SET Phone = '000-00-00' WHERE (First_name = 'Leonid') AND (Surname = 'Zaharov');
+SELECT * FROM Students WHERE ALL;
+SELECT * FROM Students WHERE First_name LIKE '[ABC][^mno]_x%';
+SELECT Surname, Phone FROM Students WHERE (Age > 19) AND (Age < 21);
+DROP TABLE Students;
